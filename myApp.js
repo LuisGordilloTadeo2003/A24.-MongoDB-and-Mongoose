@@ -35,21 +35,6 @@ function createAndSavePerson(name, age, favoriteFoods, callback) {
   });
 }
 
-// Ejemplo de uso
-createAndSavePerson('John Doe', 25, ['Pizza', 'Ice Cream'], (err, savedPerson) => {
-  if (err) {
-    console.error(err);
-  } else {
-    console.log('Persona guardada correctamente:', savedPerson);
-  }
-});
-
-
-
-const createAndSavePerson = (done) => {
-  done(null /*, data*/);
-};
-
 const createManyPeople = (arrayOfPeople, done) => {
   done(null /*, data*/);
 };
