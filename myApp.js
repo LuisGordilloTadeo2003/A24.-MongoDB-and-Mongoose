@@ -15,25 +15,18 @@ const personSchema = new mongoose.Schema({
 
 const Person = mongoose.model('Person', personSchema);
 
-// Función para crear y guardar una nueva persona
-function createAndSavePerson(name, age, favoriteFoods, callback) {
-  // Crea una instancia del modelo Person
-  const newPerson = new Person({
-    name: name,
-    age: age,
-    favoriteFoods: favoriteFoods
+let createAndSavePerson = function (done) {
+  let LuisGordillo = new Person({
+    name: "Luis Gordillo",
+    age: 20,
+    favoriteFoods: ["eggs", "fish", "fresh fruit"]
   });
 
-  // Guarda la instancia del documento en la base de datos
-  newPerson.save((err, data) => {
-    if (err) {
-      // Maneja el error en caso de fallo al guardar
-      return console.error(err);
-    }
-    // Llama al callback pasando el documento guardado
-    callback(null, data);
+  LuisGordillo.save(function (err, data) {
+    if (err) return console.error(err);
+    done(null, data)
   });
-}
+};
 
 const createManyPeople = (arrayOfPeople, done) => {
   done(null /*, data*/);
