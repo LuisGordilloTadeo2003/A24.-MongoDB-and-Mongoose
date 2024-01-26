@@ -16,13 +16,15 @@ const personSchema = new mongoose.Schema({
 
 Person = mongoose.model('Person', personSchema);
 
-let aPerson = new Person({
-  name: 'John Doe',
-  age: 25,
-  favoriteFoods: ['pizza', 'hamburguer']
-});
+
 
 const createAndSavePerson = (aPerson, done) => {
+  let aPerson = new Person({
+    name: 'John Doe',
+    age: 25,
+    favoriteFoods: ['pizza', 'hamburguer']
+  });
+
   aPerson.save(function (err, data) {
     if (err) return done(err);
 
