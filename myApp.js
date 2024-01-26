@@ -23,7 +23,8 @@ const createAndSavePerson = function (done) {
   });
 
   LuisGordillo.save(function (err, data) {
-    if (err) return console.error(err);
+    if (err) return done(err);
+
     done(null, data)
   });
 
