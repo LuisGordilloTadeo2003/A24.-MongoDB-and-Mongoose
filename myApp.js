@@ -17,7 +17,7 @@ const personSchema = new mongoose.Schema({
 
 Person = mongoose.model('Person', personSchema);
 
-const createAndSavePerson = function (done) {
+const createAndSavePerson = (done) => {
   let LuisGordillo = new Person({
     name: "Luis Gordillo",
     age: 20,
